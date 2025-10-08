@@ -8,8 +8,8 @@ const attachResponseCookie = (_id, res) => {
     res.cookie('authToken', token, {
         path: '/', // if path is "/api" that cookie works for only "/api" path requests. not for others
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict', // or lax - allows other sites get request nor for other type requests(eg: link sharing on social media)
+        secure: true, // when https - true, http - false
+        sameSite: 'none', // strict/lax => strict - use in different domain/subdomain. lax - allows other sites get request nor for other type requests(eg: link sharing on social media)
         maxAge: 15 * 60 * 1000 // 15 min
     })
 }
