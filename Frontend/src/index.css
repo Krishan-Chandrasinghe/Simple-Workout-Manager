@@ -1,0 +1,282 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Layout */
+:root {
+    --primary: rgb(0, 224, 0);
+    --secondary: rgba(194, 248, 194, 0.568);
+    --accent: rgb(9, 214, 129);
+    --error: rgb(228, 0, 0);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f1f1f1;
+    font-family: "Poppins";
+}
+
+header {
+    background: #fff;
+    position: sticky;
+    top: 0;
+}
+
+header .container {
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+}
+
+/* nav {
+    display: flex;
+    align-items: center;
+} */
+
+nav div{
+    display: flex;
+    gap: 0.75rem;
+}
+
+nav button{
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    border-color: var(--accent);
+    background-color: var(--secondary);
+    cursor: pointer;
+}
+
+a {
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+}
+
+nav a {
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.page {
+    padding: 1rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: calc(100vh - 6rem);
+}
+
+.home {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 4rem;
+}
+
+/* Workout card sty;es */
+.workout_card {
+    width: 100%;
+    background-color: var(--secondary);
+    display: flex;
+    gap: 0.25rem;
+    flex-direction: column;
+    position: relative;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 1rem 2rem;
+    box-shadow: 0.25rem 0.25rem 0.25rem rgb(179, 179, 179);
+}
+
+.workout_card h3 {
+    color: var(--primary);
+}
+
+.workout_card p {
+    color: rgb(117, 117, 117);
+    font-size: 0.75em;
+}
+
+.workout_card .workout_delete {
+    font-size: 1.5em;
+    position: absolute;
+    right: 0;
+    margin-right: 1rem;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+.workout_card .workout_delete:hover {
+    color: rgb(241, 1, 1);
+    background-color: rgba(128, 128, 128, 0.274);
+    cursor: pointer;
+    transition-duration: 300ms;
+}
+
+
+/* workouts list styles */
+.workout_list {
+    overflow-y: scroll;
+    height: calc(100vh - 7rem);
+    padding-inline: 0.5rem;
+}
+
+.workout_list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.workout_list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.workout_list::-webkit-scrollbar-thumb {
+    background: #8887877e;
+    border-radius: 5px;
+}
+
+.workout_list::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+    border: 0.5px solid var(--primary);
+    cursor: pointer;
+}
+
+/* workout form styles */
+.workout_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.workout_form label {
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+
+.workout_form input {
+    padding: 0.25rem;
+    border-radius: 5px;
+    border-color: #cfcfcf;
+}
+
+.workout_form input:focus {
+    outline-color: var(--accent);
+}
+
+.workout_form .input_error {
+    border: 2px solid var(--error);
+}
+
+.workout_form button {
+    margin-block: 0.75rem;
+    padding: 0.25rem;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--accent);
+    font-weight: 700;
+    border-color: #cfcfcf;
+}
+
+.workout_form .error_msg {
+    font-size: 0.75em;
+    text-align: justify;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    color: var(--error);
+    border: 2px solid var(--error);
+    border-radius: 5px;
+    background-color: rgba(255, 0, 128, 0.178);
+}
+
+.workout_form .success_msg {
+    font-size: 0.75em;
+    text-align: justify;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    border-radius: 5px;
+    background-color: var(--secondary);
+}
+
+.workout_form .form_title {
+    margin: 0.5rem auto;
+}
+
+/* Signup Login Pages */
+.form {
+    background-color: var(--secondary);
+    max-width: 25rem;
+    padding: 3rem 2rem;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px gray;
+}
+
+.form h3 {
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+}
+
+.form input {
+    margin-bottom: 1rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.form input:focus {
+    outline-color: var(--accent);
+}
+
+.form label {
+    font-size: 0.9em;
+}
+
+.form button {
+    padding: 0.25rem 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    background-color: var(--accent);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.form .error{
+    font-weight: 600;
+    font-size: small;
+    color: var(--error);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Landing page styles */
+.landing_page {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.landing_page h1 {
+    color: var(--accent);
+    font-size: 3em;
+}
+
+.landing_page p {
+    font-size: 0.75em;
+}
