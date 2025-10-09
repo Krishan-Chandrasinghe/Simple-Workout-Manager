@@ -59,7 +59,7 @@ cd Simple-Workout-Manager
 ### 2. Backend Setup
 
 ```bash
-cd server
+cd Backend
 npm install
 ```
 
@@ -97,13 +97,12 @@ npm start
 
 ### 3. Frontend Setup
 ```bash
-cd ../client
+cd ../Frontend
 npm install
-npm start
 ```
 
 #### i. API Configuration
-- Edit the api.js file (client/src/api.js)
+- Edit the api.js file (Frontend/src/api.js)
 - Change the baseURL to your client URL
 
 ```bash
