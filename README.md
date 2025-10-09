@@ -66,7 +66,7 @@ npm install
 #### i. Edit CORS origin URL inside the server.js
 
 ```bash
-origin:'https://simple-workout-manager.vercel.app', // Replace with your frontend URL
+baseURL: 'http://localhost:5173',  // Replace with your frontend URL
 ```
 
 #### ii. Environment Configuration
