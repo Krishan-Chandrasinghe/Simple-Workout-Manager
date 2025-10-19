@@ -15,7 +15,7 @@ app.use(cookieParser());
 
 // app.use(cors()); // httpOnly cookie will not create like this
 app.use(cors({
-    origin:'https://simple-workout-manager.vercel.app', // Replace with your frontend URL
+    origin: process.env.FRONTEND_URL, // Replace with your frontend URL
     credentials:true
 }));
 
