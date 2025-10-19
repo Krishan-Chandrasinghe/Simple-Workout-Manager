@@ -2,11 +2,6 @@
 
 A full-stack workout management application built with the MERN stack, featuring JWT authentication and personalized task management.
 
-![MERN Stack](https://img.shields.io/badge/MERN-Full%20Stack-green)
-![JWT](https://img.shields.io/badge/Auth-JWT-orange)
-![React](https://img.shields.io/badge/Frontend-React-blue)
-![Node.js](https://img.shields.io/badge/Backend-Node.js-success)
-
 ## 🚀 Features
 
 ### 🔐 Authentication & Security
@@ -41,13 +36,12 @@ A full-stack workout management application built with the MERN stack, featuring
 - **bcryptjs** - Password hashing
 - **CORS** - Cross-origin resource sharing
 
-
-## ⚙️ Installation & Setup
-
-### Prerequisites
+## Prerequisites
 - Node.js (v14 or higher)
-- MongoDB (local or Atlas)
+- MongoDB Compass desktop app or MongoDB Atlas cluster
 - npm or yarn
+
+## ⚙️ Installation & Setup (Run followings in CMD or Terminal)
 
 ### 1. Clone the Repository
 
@@ -63,37 +57,14 @@ cd Backend
 npm install
 ```
 
-#### i. Edit CORS origin URL inside the server.js
+#### i. Environment Configuration
+- Create a .env file using .env.sample in the backend directory:
 
 ```bash
-baseURL: 'http://localhost:5173',  // Replace with your frontend URL
+cp .env.sample .env
 ```
+- **Note :-** You need to update environment variables' data according to your details.
 
-#### ii. Environment Configuration
-- Create a .env file in the backend directory:
-- **Note :-** You need to put the MONGO_URI as the connection string of MongoDB atlas server or MongoDB Compass desktop App.
-
-```bash
-# Server Configurations
-SERVER_PORT=4000
-SERVER_HOST=127.0.0.1
-
-# Mongo Congigurations
-MONGO_URI=mongodb://localhost:27017/workout_manager
-
-# JWT Configurations
-BCRYPT_SALT_ROUNDS=10
-JWT_SECRET_STRING='a88f79e757bd868514c0cd21a8f9f450bc13f16c5dd46aec5f7e5e123662d9f1e0b57285690f9ea5acbb96cc9a8ab1069dd98f76d1a1b5d1f52650e641'
-
-# Cookie Configurations
-NODE_ENV='development'
-```
-
-#### iii. Start Backend Server
-
-```bash
-npm start
-```
 
 ### 3. Frontend Setup
 ```bash
@@ -101,16 +72,28 @@ cd ../Frontend
 npm install
 ```
 
-#### i. API Configuration
-- Edit the api.js file (Frontend/src/api.js)
-- Change the baseURL to your client URL
+#### i. Environment Configuration
+- Create a .env file using .env.sample in the Client directory:
 
 ```bash
-baseURL: 'http://localhost:4000/api',  // Replace with your backend URL + '/api'
+cp .env.sample .env
+```
+- **Note :-** You need to update environment variables' data according to your details.
+
+
+### 4. Start the application
+- Open two terminals inside your application root folder (One for the Server and one for the Client)
+
+#### i. Start Server(Backend) Server
+
+```bash
+cd Frontend
+npm run dev
 ```
 
-#### ii. Start Frontend Development Server
+#### ii. Start Client(Frontend) Development Server
 
 ```bash
+cd Backend
 npm run dev
 ```
